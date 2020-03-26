@@ -1,0 +1,109 @@
+Installation 
+1. Create virtual environment:
+
+python -m venv env
+
+2. Activate virtual environment:
+
+winddows: env\scripts\activate
+linux: source env/bin/activate
+
+3. Install requirements
+
+pip install flask
+
+Collecting flask
+  Using cached https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl
+Collecting Werkzeug>=0.15 (from flask)
+  Using cached https://files.pythonhosted.org/packages/ba/a5/d6f8a6e71f15364d35678a4ec8a0186f980b3bd2545f40ad51dd26a87fb1/Werkzeug-1.0.0-py2.py3-none-any.whl
+Collecting Jinja2>=2.10.1 (from flask)
+  Using cached https://files.pythonhosted.org/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl
+Collecting click>=5.1 (from flask)
+  Downloading https://files.pythonhosted.org/packages/dd/c0/4d8f43a9b16e289f36478422031b8a63b54b6ac3b1ba605d602f10dd54d6/click-7.1.1-py2.py3-none-any.whl (82kB)
+     |████████████████████████████████| 92kB 5.8MB/s
+Collecting itsdangerous>=0.24 (from flask)
+  Using cached https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10.1->flask)
+  Using cached https://files.pythonhosted.org/packages/65/c6/2399700d236d1dd681af8aebff1725558cddfd6e43d7a5184a675f4711f5/MarkupSafe-1.1.1-cp37-cp37m-win_amd64.whl
+Installing collected packages: Werkzeug, MarkupSafe, Jinja2, click, itsdangerous, flask
+Successfully installed Jinja2-2.11.1 MarkupSafe-1.1.1 Werkzeug-1.0.0 click-7.1.1 flask-1.1.1 itsdangerous-1.1.0
+WARNING: You are using pip version 19.2.3, however version 20.0.2 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+4. Upgrade pip as advised
+
+python -m pip install --upgrade pip
+
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/54/0c/d01aa759fdc501a58f431eb594a17495f15b88da142ce14b5845662c13f3/pip-20.0.2-py2.py3-none-any.whl 
+(1.4MB)
+     |████████████████████████████████| 1.4MB 3.3MB/s
+Installing collected packages: pip
+  Found existing installation: pip 19.2.3
+    Uninstalling pip-19.2.3:
+      Successfully uninstalled pip-19.2.3
+Successfully installed pip-20.0.2
+
+5. Testing if flask installed correctly
+
+python
+
+Python 3.7.5 (tags/v3.7.5:5c02a39a0b, Oct 15 2019, 00:11:34) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import flask
+>>> 
+
+
+Building App
+
+1. Create directory for app
+
+mkdir flaskapp
+
+2. Create __init__.py for flaskapp package
+
+3. Create routes.py in flaskapp package
+
+4. Create flasktutorial.py
+
+5. Set environment
+
+Windows: set FLASK_APP=flasktutorial.py
+Windows Powershell: $Env:FLASK_APP="flasktutorial.py"
+Linux: export FLASK_APP=flasktutorial.py
+
+6. Run App
+
+flask run
+
+* Serving Flask app "flasktutorial.py"
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+
+ If for some reason, environment is not set:
+
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+Usage: flask run [OPTIONS]
+
+Error: Could not locate a Flask application. You did not provide the "FLASK_APP" environment variable, and a "wsgi.py" or "app.py" module was not found in the current directory.
+
+
+7. Set environment automatically
+
+From flask 1.0, environment variable can be registered automatically when running flask, to do this:
+
+- pip install python-dotenv
+
+Collecting python-dotenv
+  Using cached python_dotenv-0.12.0-py2.py3-none-any.whl (17 kB)
+Installing collected packages: python-dotenv
+Successfully installed python-dotenv-0.12.0
+
+- create .flaskenv in root app folder with this content: FLASK_APP=flasktutorial.py
