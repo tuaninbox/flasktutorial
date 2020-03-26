@@ -1,0 +1,38 @@
+Deploy Web App Service using Git Actions
+
+1. Create requirement document
+
+(env) PS C:\flasktutorial> pip freeze > requirements.txt
+
+(env) PS C:\flasktutorial> ls
+
+
+
+    Directory: C:\flasktutorial
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+da---l       26/03/2020  12:39 PM                .vscode
+da---l       26/03/2020  11:56 AM                env
+da---l       26/03/2020   1:01 PM                flaskapp
+da---l       26/03/2020  12:10 PM                guide
+da---l       26/03/2020   1:01 PM                __pycache__
+-a---l       26/03/2020   1:10 PM             26 .flaskenv
+-a---l       26/03/2020   1:06 PM           1946 .gitignore
+-a---l       26/03/2020  12:51 PM             25 flasktutorial.py
+-a---l       26/03/2020  12:20 PM            801 README.md
+-a----       26/03/2020   1:37 PM            250 requirements.txt
+
+2. Create Azure Web App and Follow Deployment Center on portal.azure.com to connect Github Actions and Deploy
+
+(env) PS C:\flasktutorial> type requirements.txt
+
+click==7.1.1
+Flask==1.1.1
+itsdangerous==1.1.0
+Jinja2==2.11.1
+MarkupSafe==1.1.1
+python-dotenv==0.12.0
+Werkzeug==1.0.0
+(env) PS C:\flasktutorial> 
